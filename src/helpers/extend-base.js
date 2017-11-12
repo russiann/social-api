@@ -37,7 +37,7 @@ class Service {
   }
 
   _getParams(params, method) {
-    if (this.options.disableParams.includes(method)) {
+    if (this.options.allowedMethods.includes(method)) {
       params._provider = params.provider;
       params.isExtended = true;
       delete params.provider;

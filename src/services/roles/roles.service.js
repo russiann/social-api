@@ -9,12 +9,13 @@ module.exports = function () {
   const options = {
     name: 'roles',
     extend: 'base/roles',
-    disableParams: ['create', 'find'],
+    allowedMethods: ['create', 'find'],
     paginate
   };
 
   // Initialize our service with any options it requires
   app.use('/roles', extendBase(options));
+  app.associate('query', '/:user/roles', '/roles', 'user');
 
   // Get our initialized service so that we can register hooks and filters
   const service = app.service('roles');

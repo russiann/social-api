@@ -19,12 +19,15 @@ const base           = require('./base');
 const services       = require('./services');
 const appHooks       = require('./app.hooks');
 const helpers        = require('./helpers');
+const associations   = require('./helpers/associations-module');
 
 const authentication = require('./authentication');
 
 const mongoose       = require('./mongoose');
 
 const app            = feathers();
+
+app.configure(associations);
 
 // Init enum object
 app.set('enums', {});
