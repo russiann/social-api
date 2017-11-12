@@ -1,7 +1,7 @@
 const Enum = require('enum');
 
-module.exports = (app, path, ...args) => {
-  const newEnum = new Enum(...args);
+module.exports = (app, path, definition) => {
+  const newEnum = new Enum(definition, { ignoreCase: true });
   const enums = app.get('enums');
   
   enums[path] = newEnum;

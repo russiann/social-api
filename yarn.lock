@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@feathersjs/errors@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-3.0.0.tgz#a526b3b7d89c1b2ac2f409554e2980e5acceeb40"
+  dependencies:
+    debug "^3.1.0"
+
 "@types/node@*":
   version "8.0.51"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.51.tgz#b31d716fb8d58eeb95c068a039b9b6292817d5fb"

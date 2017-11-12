@@ -4,7 +4,7 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
 
-  const RolePermissions = createEnum(app, 'RolePermissions', ['Feature1', 'Feature2', 'Feature3']);
+  const RolePermissions = createEnum(app, 'RolePermissions', ['FeatureOne', 'FeatureTwo', 'FeatureThree']);
   const RoleActions = createEnum(app, 'RoleActions', ['Find', 'Get', 'Create', 'Update']);
 
   const schema = {
