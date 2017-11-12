@@ -18,12 +18,19 @@ const middleware     = require('./middleware');
 const base           = require('./base');
 const services       = require('./services');
 const appHooks       = require('./app.hooks');
+const helpers        = require('./helpers');
 
 const authentication = require('./authentication');
 
 const mongoose       = require('./mongoose');
 
 const app            = feathers();
+
+// Init enum object
+app.set('enums', {});
+
+// Load helpers
+app.set('helpers', helpers);
 
 // Load app configuration
 app.configure(configuration());

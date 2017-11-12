@@ -1,6 +1,7 @@
 const authentication = require('feathers-authentication');
-const jwt = require('feathers-authentication-jwt');
-const local = require('feathers-authentication-local');
+const jwt            = require('feathers-authentication-jwt');
+const local          = require('feathers-authentication-local');
+const verifier       = require('./verifier');
 
 
 module.exports = function () {
@@ -10,7 +11,7 @@ module.exports = function () {
   // Set up authentication with the secret
   app.configure(authentication(config));
   app.configure(jwt());
-  app.configure(local());
+  app.configure(local(Object.assign(config.local, { Verifier: verifier })));
 
   // The `authentication` service is used to create a JWT.
   // The before `create` hook registers strategies that can be used
