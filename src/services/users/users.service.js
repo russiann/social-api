@@ -9,7 +9,7 @@ module.exports = function () {
   const options = {
     name: 'users',
     extend: 'base/users',
-    disableParams: ['create', 'find'],
+    allowedMethods: ['create', 'find'],
     paginate
   };
 
